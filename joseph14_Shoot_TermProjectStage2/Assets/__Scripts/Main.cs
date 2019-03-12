@@ -70,7 +70,7 @@ public class Main : MonoBehaviour
 
     public void SpawnEnemy()
     {
-        if (isPlaying && EnemiesOnScreen <= 2)
+        if (isPlaying && EnemiesOnScreen <=2)
         {
             EnemiesOnScreen++;
             // Pick a random Enemy prefab to instantiate
@@ -132,15 +132,16 @@ public class Main : MonoBehaviour
         // which means it has failed to find the right WeaponDefinition
         return (new WeaponDefinition()); // c
     }
-
+    
     public void Update()
     {
-        setText();
-
+       setText();
+        /*
         if (score >= gv[currLevel].score)
         {
             currLevel++;
         }
+        */
     }
 
     public void setText()
@@ -162,5 +163,22 @@ public class Main : MonoBehaviour
         {
             Debug.Log("Fatal Error!!!!!");
         }
+    }
+
+    public static void DestroyAllObjects()
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject e in enemies)
+        {
+            Destroy(e);
+        }
+
+        GameObject[] bullets = GameObject.FindGameObjectsWithTag("ProjectilePlayer");
+        foreach (GameObject b in bullets)
+        {
+            Destroy(b);
+        }
+
+        EnemiesOnScreen = 0;
     }
 }
