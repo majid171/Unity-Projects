@@ -54,6 +54,7 @@ public class Enemy : MonoBehaviour
         { // a
           // We're off the bottom, so destroy this GameObject // b
             Destroy(gameObject); // b
+            Main.EnemiesOnScreen--;
         }
     }
     public virtual void Move()
@@ -91,7 +92,8 @@ public class Enemy : MonoBehaviour
                     // Destroy this Enemy
 
                     Destroy(this.gameObject);
-
+                    Main.EnemiesOnScreen--;
+                    //Main.test();
                     if (this is Enemy_1)
                     {
                         Main.Enemy1Total++;

@@ -14,6 +14,7 @@ public class _Scene_0_Menu : MonoBehaviour
     public Text enemy0, enemy1, enemy2, enemy3, enemy4;
     public Material bg;
     public Texture img1, img2, img3;
+    public GameObject bgImg;
     
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,7 @@ public class _Scene_0_Menu : MonoBehaviour
         toggle.onClick.AddListener(toggleClick);
         restart.onClick.AddListener(restartClick);
         exit.onClick.AddListener(exitClick);
+        bgImg = GameObject.Find("StarfieldBG");
     }
 
     void Update()
@@ -44,6 +46,9 @@ public class _Scene_0_Menu : MonoBehaviour
         {
             bg.mainTexture = img3;
         }
+
+        bgImg.transform.localScale = new Vector3(BackgroundScript.xScale, BackgroundScript.yScale, 1);
+      //  Debug.Log(Main.EnemiesOnScreen);
     }
 
     void toggleClick()

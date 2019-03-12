@@ -2,6 +2,7 @@
 using System.Collections.Generic; // Required to use Lists or Dictionaries
 using UnityEngine; // Required for Unity
 using UnityEngine.SceneManagement; // For loading & reloading of scenes
+using UnityEngine.UI;
 
 public class Main : MonoBehaviour
 {
@@ -14,6 +15,10 @@ public class Main : MonoBehaviour
     public static int Enemy3Total = 0;
     public static int Enemy4Total = 0;
     public static int damage0 = 5, damage1 = 10, damage2 = 15, damage3 = 20, damage4 = 25;
+    public static int EnemiesOnScreen = 0;
+    public static GameLevel[] gv = new GameLevel[3];
+    public static int currLevel = 0;
+    public Text levelText;
 
     static public Main S; // A singleton for Main
     static Dictionary<WeaponType, WeaponDefinition> WEAP_DICT; // a
@@ -65,8 +70,9 @@ public class Main : MonoBehaviour
 
     public void SpawnEnemy()
     {
-        if (isPlaying)
+        if (isPlaying && EnemiesOnScreen <= 2)
         {
+            EnemiesOnScreen++;
             // Pick a random Enemy prefab to instantiate
             int ndx = Random.Range(0, prefabEnemies.Length); // b
             GameObject go = Instantiate<GameObject>(prefabEnemies[ndx]); // c
@@ -127,5 +133,34 @@ public class Main : MonoBehaviour
         return (new WeaponDefinition()); // c
     }
 
+    public void Update()
+    {
+        setText();
 
+        if (score >= gv[currLevel].score)
+        {
+            currLevel++;
+        }
+    }
+
+    public void setText()
+    {
+        if (currLevel == 0)
+        {
+            levelText.text = "Bronze";
+        }
+        else if (currLevel == 1)
+        {
+            levelText.text = "Silver";
+
+        }
+        else if (currLevel == 2)
+        {
+            levelText.text = "Gold";
+        }
+        else
+        {
+            Debug.Log("Fatal Error!!!!!");
+        }
+    }
 }

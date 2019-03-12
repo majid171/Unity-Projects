@@ -12,6 +12,8 @@ public class BackgroundScript : MonoBehaviour
     public static int dpValue;
     public Image img;
     public Sprite img1, img2, img3;
+    public Slider xSlide, ySlide;
+    public static int xScale = 80, yScale = 80;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +38,8 @@ public class BackgroundScript : MonoBehaviour
             img.sprite = img3;
         }
 
+        xScale = (int)Mathf.Round(xSlide.value) * 10;
+        yScale = (int)Mathf.Round(ySlide.value) * 10;
     }
 
     void exitClick()
