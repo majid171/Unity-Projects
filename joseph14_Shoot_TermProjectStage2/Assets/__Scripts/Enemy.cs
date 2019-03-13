@@ -44,7 +44,7 @@ public class Enemy : MonoBehaviour
     }
     void Update()
     {
-        if(Main.isPlaying) Move();
+        Move();
         if (showingDamage && Time.time > damageDoneTime)
         { // c
             UnShowDamage();

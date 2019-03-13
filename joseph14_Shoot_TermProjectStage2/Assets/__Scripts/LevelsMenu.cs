@@ -20,17 +20,17 @@ public class LevelsMenu : MonoBehaviour
 
     void goldClick()
     {
-
+        SceneManager.LoadScene("GoldScene");
     }
 
     void silverClick()
     {
-
+        SceneManager.LoadScene("SilverScene");
     }
 
     void bronzeClick()
     {
-
+        SceneManager.LoadScene("BronzeScene");
     }
 
     void exitClick()

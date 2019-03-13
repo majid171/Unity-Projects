@@ -17,7 +17,6 @@ public class MainMenu : MonoBehaviour
         history.onClick.AddListener(historyClick);
         play.onClick.AddListener(playClick);
         exit.onClick.AddListener(exitClick);
-
     }
 
     void levelsClick()
@@ -44,4 +43,6 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("StartScene");
     }
+
+    
 }

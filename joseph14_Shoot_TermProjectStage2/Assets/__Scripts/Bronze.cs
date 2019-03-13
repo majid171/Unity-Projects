@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class Bronze : MonoBehaviour
 {
@@ -20,11 +21,12 @@ public class Bronze : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        bool[] temp = { toggle0.isOn, toggle1.isOn, toggle2.isOn, toggle3.isOn, toggle4.isOn};
+        Main.gv[0] = new GameLevel(Int32.Parse(ScoreField.text), Int32.Parse(EnemiesField.text), temp);
     }
 
     void exitClick()
     {
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("SilverScene");
     }
 }

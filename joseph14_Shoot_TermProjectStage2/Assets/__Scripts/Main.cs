@@ -16,9 +16,10 @@ public class Main : MonoBehaviour
     public static int Enemy4Total = 0;
     public static int damage0 = 5, damage1 = 10, damage2 = 15, damage3 = 20, damage4 = 25;
     public static int EnemiesOnScreen = 0;
-    public static GameLevel[] gv = new GameLevel[3];
+    public static GameLevel[] gv;
     public static int currLevel = 0;
     public Text levelText;
+    public GameObject[] enemiesTest;
 
     static public Main S; // A singleton for Main
     static Dictionary<WeaponType, WeaponDefinition> WEAP_DICT; // a
@@ -70,9 +71,10 @@ public class Main : MonoBehaviour
 
     public void SpawnEnemy()
     {
-        if (isPlaying && EnemiesOnScreen <=2)
+        if (enemiesTest.Length < gv[currLevel].MaxEnemies)
         {
-            EnemiesOnScreen++;
+            print(enemiesTest.Length + " -- " + gv[currLevel].MaxEnemies);
+            //EnemiesOnScreen++;
             // Pick a random Enemy prefab to instantiate
             int ndx = Random.Range(0, prefabEnemies.Length); // b
             GameObject go = Instantiate<GameObject>(prefabEnemies[ndx]); // c
@@ -135,13 +137,13 @@ public class Main : MonoBehaviour
     
     public void Update()
     {
-       setText();
-        /*
+        enemiesTest = GameObject.FindGameObjectsWithTag("Enemy");
+        setText();
         if (score >= gv[currLevel].score)
         {
             currLevel++;
-        }
-        */
+            DestroyAllObjects();
+        }  
     }
 
     public void setText()
@@ -181,4 +183,6 @@ public class Main : MonoBehaviour
 
         EnemiesOnScreen = 0;
     }
+
+    
 }

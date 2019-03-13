@@ -35,4 +35,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AudioMenu.unity
     guid: bbde21772823f7b449015c4667fc2c7a
+  - enabled: 1
+    path: Assets/Scenes/GoldScene.unity
+    guid: 1a778cb9aa1d7b448b6579fb521a1b42
+  - enabled: 1
+    path: Assets/Scenes/SilverScene.unity
+    guid: 9dd4e87ffdd081a458a2fb7d142019b5
   m_configObjects: {}

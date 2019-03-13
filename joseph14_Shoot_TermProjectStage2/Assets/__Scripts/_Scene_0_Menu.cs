@@ -63,10 +63,13 @@ public class _Scene_0_Menu : MonoBehaviour
         if (Main.isPlaying)
         {
             BtnTxt.text = "Play";
+
+            Time.timeScale = 0.0f;
         }
         else
         {
             BtnTxt.text = "Pause";
+            Time.timeScale = 1.0f;
         }
         Main.isPlaying = !Main.isPlaying;
     }
