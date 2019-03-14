@@ -9,10 +9,13 @@ public class StartMenu : MonoBehaviour
 
     public Button quit;
     public Button start;
+    public AudioSource click;
 
     // Start is called before the first frame update
     void Start()
     {
+        click = GetComponent<AudioSource>();
+        click.Stop();
         quit.onClick.AddListener(quitClick);
         start.onClick.AddListener(startClick);
         InitGV();
@@ -20,21 +23,25 @@ public class StartMenu : MonoBehaviour
 
     void quitClick()
     {
+        click.Play();
         UnityEditor.EditorApplication.isPlaying = false;
     }
 
     void startClick()
     {
+        click.Play();
         SceneManager.LoadScene("MainScene");
+
     }
 
     public void InitGV()
     {
-        Main.gv = new GameLevel[3];
-        bool[] temp = { true, true, true, true, true };
+        Main.gv = new GameLevel[4];
+        bool[] temp = { true, true, true, true, true , true, true, true, true, true};
 
-        Main.gv[0] = new GameLevel(100, 3, temp);
-        Main.gv[1] = new GameLevel(150, 3, temp);
-        Main.gv[2] = new GameLevel(200, 3, temp);
+        Main.gv[0] = new GameLevel(1, 1, temp);
+        Main.gv[1] = new GameLevel(2, 2, temp);
+        Main.gv[2] = new GameLevel(20, 3, temp);
+        Main.gv[3] = new GameLevel(10000, 4, temp);
     }
 }

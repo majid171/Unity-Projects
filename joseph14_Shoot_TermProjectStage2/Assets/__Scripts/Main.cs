@@ -15,11 +15,11 @@ public class Main : MonoBehaviour
     public static int Enemy3Total = 0;
     public static int Enemy4Total = 0;
     public static int damage0 = 5, damage1 = 10, damage2 = 15, damage3 = 20, damage4 = 25;
-    public static int EnemiesOnScreen = 0;
     public static GameLevel[] gv;
     public static int currLevel = 0;
     public Text levelText;
     public GameObject[] enemiesTest;
+    public static AudioSource[] sounds;
 
     static public Main S; // A singleton for Main
     static Dictionary<WeaponType, WeaponDefinition> WEAP_DICT; // a
@@ -37,6 +37,7 @@ public class Main : MonoBehaviour
 
     public void shipDestroyed(Enemy e)
     { // c
+        playDestroySound();
       // Potentially generate a PowerUp
         if (Random.value <= e.powerUpDropChance)
         { // d
@@ -52,11 +53,42 @@ public class Main : MonoBehaviour
                                 // Set it to the position of the destroyed ship
             pu.transform.position = e.transform.position;
         }
+
+        if (e is Enemy_1)
+        {
+            Main.Enemy1Total++;
+            Main.score += Main.damage1;
+        }
+        else if (e is Enemy_2)
+        {
+            Main.Enemy2Total++;
+            Main.score += Main.damage2;
+
+        }
+        else if (e is Enemy_3)
+        {
+            Main.Enemy3Total++;
+            Main.score += Main.damage3;
+
+        }
+        else if (e is Enemy_4)
+        {
+            Main.Enemy4Total++;
+            Main.score += Main.damage4;
+
+        }
+        else if (e is Enemy)
+        {
+            Main.Enemy0Total++;
+            Main.score += Main.damage0;
+        }
     }
 
     void Awake()
     {
-
+        sounds = GetComponents<AudioSource>();
+        stopAllSounds();
+        playBGMusic();
         S = this;
         WEAP_DICT = new Dictionary<WeaponType, WeaponDefinition>(); // a
         bndCheck = GetComponent<BoundsCheck>();
@@ -69,14 +101,93 @@ public class Main : MonoBehaviour
         }   
     }
 
+    public static void playBGMusic()
+    {
+        int index = 0;
+
+        if (AudioMenuScript.d1Val == 0)
+        {
+            index = 0;
+        }
+        else if(AudioMenuScript.d1Val == 1)
+        {
+            index = 1;
+        }
+        else
+        {
+            index = 2;
+        }
+        sounds[index].volume = AudioMenuScript.d1Vol;
+        sounds[index].Play();
+    }
+
+    public static void playWinSound()
+    {
+        int index = 8;
+
+        if (AudioMenuScript.d2Val == 0)
+        {
+            index = 8;
+        }
+        else
+        {
+            index = 9;
+        }
+
+        sounds[index].volume = AudioMenuScript.d2Vol;
+        sounds[index].Play();
+    }
+
+    public static void playShootSound()
+    {
+        int index = 3;
+        if (AudioMenuScript.d3Val == 0)
+        {
+            index = 3;
+        }
+        else if(AudioMenuScript.d3Val == 1)
+        {
+            index = 4;
+        }
+
+        if (!sounds[index].isPlaying)
+        {
+            sounds[index].volume = AudioMenuScript.d3Vol;
+            sounds[index].Play();
+        }
+    }
+
+    public static void playDestroySound()
+    {
+        int index = 5;
+        if (AudioMenuScript.d4Val == 0)
+        {
+            index = 5;
+        }
+        else if (AudioMenuScript.d4Val == 1)
+        {
+            index = 6;
+        }
+        else if (AudioMenuScript.d4Val == 2)
+        {
+            index = 7;
+        }
+
+        sounds[index].volume = AudioMenuScript.d4Vol;
+        sounds[index].Play();     
+    }
+
     public void SpawnEnemy()
     {
         if (enemiesTest.Length < gv[currLevel].MaxEnemies)
         {
-            print(enemiesTest.Length + " -- " + gv[currLevel].MaxEnemies);
-            //EnemiesOnScreen++;
             // Pick a random Enemy prefab to instantiate
-            int ndx = Random.Range(0, prefabEnemies.Length); // b
+            int ndx;
+            while (true)
+            {
+                ndx = Random.Range(0, prefabEnemies.Length); // b
+                if (gv[currLevel].arr[ndx] == true) break;
+            }
             GameObject go = Instantiate<GameObject>(prefabEnemies[ndx]); // c
                                                                          // Position the Enemy above the screen with a random x position
 
@@ -139,10 +250,12 @@ public class Main : MonoBehaviour
     {
         enemiesTest = GameObject.FindGameObjectsWithTag("Enemy");
         setText();
+
         if (score >= gv[currLevel].score)
         {
-            currLevel++;
-            DestroyAllObjects();
+           playWinSound();
+           currLevel++;
+           DestroyAllObjects();
         }  
     }
 
@@ -160,6 +273,10 @@ public class Main : MonoBehaviour
         else if (currLevel == 2)
         {
             levelText.text = "Gold";
+        }
+        else if(currLevel == 3)
+        {
+            levelText.text = "*Infinite*";
         }
         else
         {
@@ -181,8 +298,13 @@ public class Main : MonoBehaviour
             Destroy(b);
         }
 
-        EnemiesOnScreen = 0;
     }
 
-    
+    public static void stopAllSounds()
+    {
+        for (int i = 0; i < sounds.Length; i++)
+        {
+            sounds[i].Stop();
+        }
+    }    
 }

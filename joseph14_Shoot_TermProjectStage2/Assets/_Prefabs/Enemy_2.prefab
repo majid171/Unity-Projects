@@ -166,6 +166,9 @@ MonoBehaviour:
   showingDamage: 0
   damageDoneTime: 0
   notifiedOfDestruction: 0
+  projectilePrefab: {fileID: 3559454900790387087, guid: ae25984fbaafba243a6a8144d6080f80,
+    type: 3}
+  projectileSpeed: 40
   sinEccentricity: 0.6
   lifeTime: 10
   p0: {x: 0, y: 0, z: 0}

@@ -443,6 +443,8 @@ MonoBehaviour:
   showingDamage: 0
   damageDoneTime: 0
   notifiedOfDestruction: 0
+  projectilePrefab: {fileID: 8943697993582345820}
+  projectileSpeed: 40
   parts:
   - name: Cockpit
     health: 10

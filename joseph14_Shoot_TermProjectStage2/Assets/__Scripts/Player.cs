@@ -51,6 +51,7 @@ public class Player : MonoBehaviour
 
             if (Input.GetAxis("Jump") == 1 && fireDelegate != null)
             { // d
+                Main.playShootSound();
                 fireDelegate(); // e
             }
         }
@@ -63,6 +64,7 @@ public class Player : MonoBehaviour
         Transform rootT = other.gameObject.transform.root;
         GameObject go = rootT.gameObject;
         //print("Triggered: " + go.name);
+        Debug.Log(go.tag);
         if (go == lastTriggerGo)
         { // c
             return;
@@ -77,6 +79,14 @@ public class Player : MonoBehaviour
         {
             // If the shield was triggered by a PowerUp
             AbsorbPowerUp(go);
+        }
+
+        else if (go.tag == "Untagged")
+        {
+            Debug.Log("Hit by enemy");
+
+            shieldLevel--;
+            Destroy(go);
         }
         else
         {

@@ -20,6 +20,12 @@ public class Enemy : MonoBehaviour
     
     protected BoundsCheck bndCheck; // a
 
+    public GameObject projectilePrefab;
+    public float projectileSpeed = 40;
+    public delegate void WeaponFireDelegate(); // a
+                                               // Create a WeaponFireDelegate field named fireDelegate.
+    public WeaponFireDelegate fireDelegate;
+
     void Awake()
     { // b
         bndCheck = GetComponent<BoundsCheck>();
@@ -45,6 +51,10 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         Move();
+        if (this is Enemy_1 && Main.currLevel >= 2 && fireDelegate != null)
+        {
+            fireDelegate();
+        }
         if (showingDamage && Time.time > damageDoneTime)
         { // c
             UnShowDamage();
@@ -54,7 +64,6 @@ public class Enemy : MonoBehaviour
         { // a
           // We're off the bottom, so destroy this GameObject // b
             Destroy(gameObject); // b
-            Main.EnemiesOnScreen--;
         }
     }
     public virtual void Move()
@@ -92,36 +101,6 @@ public class Enemy : MonoBehaviour
                     // Destroy this Enemy
 
                     Destroy(this.gameObject);
-                    Main.EnemiesOnScreen--;
-                    //Main.test();
-                    if (this is Enemy_1)
-                    {
-                        Main.Enemy1Total++;
-                        Main.score += Main.damage1;
-                    }
-                    else if (this is Enemy_2)
-                    {
-                        Main.Enemy2Total++;
-                        Main.score += Main.damage2;
-
-                    }
-                    else if (this is Enemy_3)
-                    {
-                        Main.Enemy3Total++;
-                        Main.score += Main.damage3;
-
-                    }
-                    else if (this is Enemy_4)
-                    {
-                        Main.Enemy4Total++;
-                        Main.score += Main.damage4;
-
-                    }
-                    else if (this is Enemy)
-                    {
-                        Main.Enemy0Total++;
-                        Main.score += Main.damage0;
-                    }
                 }
                 Destroy(otherGO); // e
                 break;

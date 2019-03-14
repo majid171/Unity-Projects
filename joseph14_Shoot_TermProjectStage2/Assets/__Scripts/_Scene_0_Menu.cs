@@ -84,6 +84,7 @@ public class _Scene_0_Menu : MonoBehaviour
         Main.Enemy3Total = 0;
         Main.Enemy4Total = 0;
         time = 0;
+        Main.currLevel = 0;
         SceneManager.LoadScene("MainScene");
     }
 
@@ -98,6 +99,7 @@ public class _Scene_0_Menu : MonoBehaviour
         Main.Enemy4Total = 0;
         time = 0;
         Main.DestroyAllObjects();
+        Main.currLevel = 0;
         //SceneManager.LoadScene("_Scene_0");
     }
 }

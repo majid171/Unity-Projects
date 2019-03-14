@@ -21,8 +21,21 @@ public class Gold : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bool[] temp = { toggle0.isOn, toggle1.isOn, toggle2.isOn, toggle3.isOn, toggle4.isOn };
-        Main.gv[2] = new GameLevel(Int32.Parse(ScoreField.text), Int32.Parse(EnemiesField.text), temp);
+        
+        if (!string.Equals("", EnemiesField.text) && !string.Equals("", ScoreField.text))
+        {
+            if (Int32.Parse(EnemiesField.text) <= Main.gv[1].MaxEnemies)
+            {
+                int num = Int32.Parse(EnemiesField.text);
+                num++;
+                EnemiesField.text = num.ToString();
+                EnemiesField.image.color = Color.red;
+            }
+
+            bool[] temp = { toggle0.isOn, toggle0.isOn, toggle0.isOn, toggle1.isOn, toggle1.isOn, toggle2.isOn, toggle2.isOn, toggle3.isOn, toggle3.isOn, toggle4.isOn, toggle4.isOn };
+            Main.gv[2] = new GameLevel(Int32.Parse(ScoreField.text), Int32.Parse(EnemiesField.text), temp);
+        }
+        
     }
 
     void exitClick()

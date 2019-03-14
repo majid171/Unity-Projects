@@ -62,6 +62,11 @@ public class Weapon : MonoBehaviour
         { // d
             rootGO.GetComponent<Player>().fireDelegate += Fire;
         }
+
+        if (rootGO.GetComponent<Enemy>() != null)
+        { // d
+            rootGO.GetComponent<Enemy>().fireDelegate += Fire;
+        }
     }
     public WeaponType type
     {
@@ -99,6 +104,10 @@ public class Weapon : MonoBehaviour
         {
             vel.y = -vel.y;
         }
+        if (transform.root.gameObject.GetComponent<Enemy>() != null)
+        {
+            vel.y = -vel.y;
+        }
         switch (type)
         { // k
             case WeaponType.blaster:
@@ -129,6 +138,7 @@ public class Weapon : MonoBehaviour
         {
             go.tag = "ProjectileEnemy";
             go.layer = LayerMask.NameToLayer("ProjectileEnemy");
+           
         }
         go.transform.position = collar.transform.position;
         go.transform.SetParent(PROJECTILE_ANCHOR, true); // o
