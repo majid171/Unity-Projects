@@ -181,7 +181,7 @@ public class Main : MonoBehaviour
     {
         if (enemiesTest.Length < gv[currLevel].MaxEnemies)
         {
-            // Pick a random Enemy prefab to instantiate
+            // Pick a random Enemy prefab to instantiate, that is valid at the current level
             int ndx;
             while (true)
             {
@@ -228,6 +228,7 @@ public class Main : MonoBehaviour
         Enemy2Total = 0;
         Enemy3Total = 0;
         Enemy4Total = 0;
+        currLevel = 0;
         SceneManager.LoadScene("_Scene_0");
     }
 

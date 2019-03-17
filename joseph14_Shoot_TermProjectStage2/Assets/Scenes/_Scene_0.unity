@@ -977,7 +977,11 @@ MonoBehaviour:
   levelText: {fileID: 1454035904}
   enemiesTest: []
   prefabEnemies:
+  - {fileID: 2362828841521552666, guid: 92b797a8cc2565244848d5e2735d07ad, type: 3}
   - {fileID: 1514933099929067063, guid: 6a3b6e12669fa854d9eb81d973ffc3b4, type: 3}
+  - {fileID: 5353878457309442649, guid: 522da93bfe6da314ebc081c6cd6aaee1, type: 3}
+  - {fileID: 4357838188276985589, guid: 76ffa5186ebf14f47a2dc302b76eeb8e, type: 3}
+  - {fileID: 8943697993582345820, guid: eb1eacb6e5a9e6545ae5ac62cca08c3b, type: 3}
   enemySpawnPerSecond: 0.5
   enemyDefaultPadding: 1.5
   weaponDefinitions:

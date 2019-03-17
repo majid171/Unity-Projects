@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour
     public bool showingDamage = false;
     public float damageDoneTime; // Time to stop showing damage
     public bool notifiedOfDestruction = false; // Will be used later
-    
+    public float timer = 0f;
     protected BoundsCheck bndCheck; // a
 
     public GameObject projectilePrefab;
@@ -48,12 +48,18 @@ public class Enemy : MonoBehaviour
             this.transform.position = value;
         }
     }
+
     void Update()
     {
+        timer += Time.deltaTime;
         Move();
         if (this is Enemy_1 && Main.currLevel >= 2 && fireDelegate != null)
         {
-            fireDelegate();
+            if (timer > 1)
+            {
+                fireDelegate();
+                timer = 0;
+            }
         }
         if (showingDamage && Time.time > damageDoneTime)
         { // c
@@ -65,6 +71,7 @@ public class Enemy : MonoBehaviour
           // We're off the bottom, so destroy this GameObject // b
             Destroy(gameObject); // b
         }
+        
     }
     public virtual void Move()
     { // b

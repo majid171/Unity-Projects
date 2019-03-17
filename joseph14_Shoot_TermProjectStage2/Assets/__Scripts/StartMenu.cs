@@ -37,11 +37,11 @@ public class StartMenu : MonoBehaviour
     public void InitGV()
     {
         Main.gv = new GameLevel[4];
-        bool[] temp = { true, true, true, true, true , true, true, true, true, true};
+        bool[] temp = { true, true, true, true, true};
 
-        Main.gv[0] = new GameLevel(1, 1, temp);
-        Main.gv[1] = new GameLevel(2, 2, temp);
-        Main.gv[2] = new GameLevel(20, 3, temp);
-        Main.gv[3] = new GameLevel(10000, 4, temp);
+        Main.gv[0] = new GameLevel(100, 1, temp);
+        Main.gv[1] = new GameLevel(200, 2, temp);
+        Main.gv[2] = new GameLevel(300, 3, temp);
+        Main.gv[3] = new GameLevel(100000, 4, temp);
     }
 }

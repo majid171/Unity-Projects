@@ -64,35 +64,36 @@ public class Player : MonoBehaviour
         Transform rootT = other.gameObject.transform.root;
         GameObject go = rootT.gameObject;
         //print("Triggered: " + go.name);
-        Debug.Log(go.tag);
-        if (go == lastTriggerGo)
-        { // c
-            return;
-        }
-        lastTriggerGo = go; // d
-        if (go.tag == "Enemy")
-        { // If the shield was triggered by an enemy
-            shieldLevel--; // Decrease the level of the shield by 1
-            Destroy(go); // … and Destroy the enemy // e
-        }
-        else if (go.tag == "PowerUp")
-        {
-            // If the shield was triggered by a PowerUp
-            AbsorbPowerUp(go);
-        }
+        GameObject goOther = other.gameObject;
+        // Debug.Log(goOther.tag);
 
-        else if (go.tag == "Untagged")
+        if (goOther.tag == "ProjectileEnemy")
         {
-            Debug.Log("Hit by enemy");
-
             shieldLevel--;
-            Destroy(go);
+            Destroy(goOther);
         }
         else
         {
-            print("Triggered by non-Enemy: " + go.name); // f
+            if (go == lastTriggerGo)
+            { // c
+                return;
+            }
+            lastTriggerGo = go; // d
+            if (go.tag == "Enemy")
+            { // If the shield was triggered by an enemy
+                shieldLevel--; // Decrease the level of the shield by 1
+                Destroy(go); // … and Destroy the enemy // e
+            }
+            else if (go.tag == "PowerUp")
+            {
+                // If the shield was triggered by a PowerUp
+                AbsorbPowerUp(go);
+            }
+            else
+            {
+                Debug.Log("Error");
+            }
         }
-
     }
 
     public void AbsorbPowerUp(GameObject go)
