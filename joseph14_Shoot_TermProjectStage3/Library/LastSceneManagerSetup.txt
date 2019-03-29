@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Main/Scenes/UserAccounts.unity
+- path: Assets/Main/Scenes/History.unity
   isLoaded: 1
   isActive: 1

@@ -65,7 +65,14 @@
     <Compile Include="Assets\ApplePickerGame\Scripts\AppleTree.cs" />
     <Compile Include="Assets\ApplePickerGame\Scripts\Basket.cs" />
     <Compile Include="Assets\ApplePickerGame\Scripts\HighScore.cs" />
+    <Compile Include="Assets\Main\Scripts\AudioMain.cs" />
+    <Compile Include="Assets\Main\Scripts\BackgroundMain.cs" />
+    <Compile Include="Assets\Main\Scripts\Change.cs" />
+    <Compile Include="Assets\Main\Scripts\Configurations.cs" />
+    <Compile Include="Assets\Main\Scripts\Create.cs" />
+    <Compile Include="Assets\Main\Scripts\Delete.cs" />
     <Compile Include="Assets\Main\Scripts\file.cs" />
+    <Compile Include="Assets\Main\Scripts\HistoryMain.cs" />
     <Compile Include="Assets\Main\Scripts\Login.cs" />
     <Compile Include="Assets\Main\Scripts\toolbar.cs" />
     <Compile Include="Assets\Main\Scripts\User.cs" />

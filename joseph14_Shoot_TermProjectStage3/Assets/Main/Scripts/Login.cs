@@ -38,6 +38,7 @@ public class Login : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log(sounds[audioIndex].time);
         
     }
 
@@ -66,11 +67,22 @@ public class Login : MonoBehaviour
         }
         else
         {
-            print("You are Logged in");
             initial = System.DateTime.Now;
             auth.users[UserIndex].history.logins.Add(System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
-            SceneManager.LoadScene("toolbar");
             WriteData();
+
+            // If logging in for the first time
+            if (auth.users[UserIndex].status == "NEW")
+            {
+                auth.users[UserIndex].status = "NORMAL";
+                WriteData();
+                SceneManager.LoadScene("Change");
+            }
+            else
+            {
+                SceneManager.LoadScene("toolbar");
+            }
+
         }
 
         UsernameField.text = "";

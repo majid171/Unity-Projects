@@ -18,6 +18,30 @@ EditorBuildSettings:
     path: Assets/Main/Scenes/File.unity
     guid: 27c6666dedd49c446bea65b47cf62256
   - enabled: 1
+    path: Assets/Main/Scenes/UserAccounts.unity
+    guid: 71e3f7e673d47124881e1c2a0f8706fb
+  - enabled: 1
+    path: Assets/Main/Scenes/Create.unity
+    guid: dbfb8ed2ae1e57e44b499a4179392754
+  - enabled: 1
+    path: Assets/Main/Scenes/Delete.unity
+    guid: ba66d4954212b674a8d0cfedbf909b84
+  - enabled: 1
+    path: Assets/Main/Scenes/Change.unity
+    guid: e9f0fdd3d1a6e81419adb90dea23315c
+  - enabled: 1
+    path: Assets/Main/Scenes/Configurations.unity
+    guid: 904395c34b305704b96009d66a4dbad0
+  - enabled: 1
+    path: Assets/Main/Scenes/AudioMain.unity
+    guid: 742f935b9a4e1324088d2fba94788125
+  - enabled: 1
+    path: Assets/Main/Scenes/BackgroundMain.unity
+    guid: 2d02a4caa281b024b98c031ee1872d67
+  - enabled: 1
+    path: Assets/Main/Scenes/History.unity
+    guid: 22ba33e948b7ed4469c076b2cdb51f23
+  - enabled: 1
     path: Assets/MemoryGame/Scenes/StartMenuMemory.unity
     guid: 3c0133776fe84486594577a97ddd8ae5
   - enabled: 1

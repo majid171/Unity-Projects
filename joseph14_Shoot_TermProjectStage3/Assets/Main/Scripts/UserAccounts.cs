@@ -24,17 +24,11 @@ public class UserAccounts : MonoBehaviour
         sounds[Login.audioIndex].Play();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void createClick()
     {
-        if (file.isAdmin)
+        if (toolbar.isAdmin)
         {
-            //SceneManager.LoadScene("");
+            SceneManager.LoadScene("Create");
         }
         else
         {
@@ -44,12 +38,19 @@ public class UserAccounts : MonoBehaviour
 
     public void deleteClick()
     {
-
+        if (toolbar.isAdmin)
+        {
+            SceneManager.LoadScene("Delete");
+        }
+        else
+        {
+            invalid.text = "Admin's Only";
+        }
     }
 
     public void changeClick()
     {
-
+        SceneManager.LoadScene("Change");
     }
 
     public void releaseClick()
@@ -59,6 +60,6 @@ public class UserAccounts : MonoBehaviour
 
     public void exitClick()
     {
-
+        SceneManager.LoadScene("File");
     }
 }

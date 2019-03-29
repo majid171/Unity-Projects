@@ -8,7 +8,7 @@ public class toolbar : MonoBehaviour
 {
     public Button file, shoot, apple, rps, memory;
     public AudioSource[] sounds;
-
+    public static bool isAdmin;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +19,8 @@ public class toolbar : MonoBehaviour
         rps.onClick.AddListener(rpsClick);
         memory.onClick.AddListener(memoryClick);
 
+        isAdmin = checkIfAdmin();
+
         sounds = GetComponents<AudioSource>();
         sounds[Login.audioIndex].Play();
     }
@@ -26,7 +28,7 @@ public class toolbar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void fileClick()
@@ -52,5 +54,10 @@ public class toolbar : MonoBehaviour
     void memoryClick()
     {
 
+    }
+
+    public static bool checkIfAdmin()
+    {
+        return Login.auth.users[Login.UserIndex].username == "admin" && Login.auth.users[Login.UserIndex].password == "admin";
     }
 }

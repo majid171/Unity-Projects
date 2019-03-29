@@ -10,7 +10,6 @@ public class file : MonoBehaviour
 
     public Button accts, config, history, logout;
     public AudioSource[] sounds;
-    public static Boolean isAdmin;
 
     // Start is called before the first frame update
     void Start()
@@ -23,14 +22,10 @@ public class file : MonoBehaviour
         sounds = GetComponents<AudioSource>();
         sounds[Login.audioIndex].Play();
 
-        isAdmin = checkIfAdmin();
 
     }
 
-    public Boolean checkIfAdmin()
-    {
-        return Login.auth.users[Login.UserIndex].username == "admin" && Login.auth.users[Login.UserIndex].password == "admin";
-    }
+    
 
     // Update is called once per frame
     void Update()
@@ -40,17 +35,17 @@ public class file : MonoBehaviour
 
     public void acctsClick()
     {
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene("UserAccounts");
     }
 
     public void configClick()
     {
-
+        SceneManager.LoadScene("Configurations");
     }
 
     public void historyClick()
     {
-
+        SceneManager.LoadScene("History");
     }
 
     public void logoutClick()
