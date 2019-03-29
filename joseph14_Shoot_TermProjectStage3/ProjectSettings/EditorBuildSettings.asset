@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Main/Scenes/MainLogin.unity
+    guid: e86dd61d7a554404b88a62f3475cdcb1
+  - enabled: 1
+    path: Assets/Main/Scenes/Toolbar.unity
+    guid: 0b281820ed2220640ae0fe8fbb3a1be8
+  - enabled: 1
+    path: Assets/Main/Scenes/File.unity
+    guid: 27c6666dedd49c446bea65b47cf62256
+  - enabled: 1
+    path: Assets/MemoryGame/Scenes/StartMenuMemory.unity
+    guid: 3c0133776fe84486594577a97ddd8ae5
+  - enabled: 1
+    path: Assets/MemoryGame/Scenes/GameSceneMemory.unity
+    guid: 434c7a01680d24f0982dde200610dbaa
+  - enabled: 1
+    path: Assets/MemoryGame/Scenes/LoseMemory.unity
+    guid: 09ed80484174caa4e85d3ae21f4a4944
+  - enabled: 1
+    path: Assets/MemoryGame/Scenes/SettingsMemory.unity
+    guid: 76fc8c36f27b93e45af0bf9e7f996a44
+  - enabled: 1
+    path: Assets/MemoryGame/Scenes/WinMemory.unity
+    guid: a2331c86e53eea04bbb4bfaa6e680049
+  - enabled: 1
+    path: Assets/ShootGame/Scenes/StartScene.unity
+    guid: 1a01ce03e2df3d54a8fbb56e9279670f
+  - enabled: 1
+    path: Assets/ShootGame/Scenes/MainScene.unity
+    guid: 8d72936b0c2f6994885edc8568852b1b
+  - enabled: 1
+    path: Assets/ShootGame/Scenes/LevelsScene.unity
+    guid: e757fb2929b7b914f8f5edb646586c3d
+  - enabled: 1
+    path: Assets/ShootGame/Scenes/ConfigScene.unity
+    guid: 8f20030940310df409d004b3fba9a110
+  - enabled: 1
+    path: Assets/ShootGame/Scenes/AudioMenu.unity
+    guid: bbde21772823f7b449015c4667fc2c7a
+  - enabled: 1
+    path: Assets/ShootGame/Scenes/BackgroundScene.unity
+    guid: 11d022e7a15f3ff40a368cbf2df8691d
+  - enabled: 1
+    path: Assets/ShootGame/Scenes/EnemiesMenu.unity
+    guid: ff9d9fd176eb7364d9fa80f8df5f7972
+  - enabled: 1
+    path: Assets/ShootGame/Scenes/BronzeScene.unity
+    guid: 1860bc3be0fd66a48aa708c9fd293284
+  - enabled: 1
+    path: Assets/ShootGame/Scenes/SilverScene.unity
+    guid: 9dd4e87ffdd081a458a2fb7d142019b5
+  - enabled: 1
+    path: Assets/ShootGame/Scenes/GoldScene.unity
+    guid: 1a778cb9aa1d7b448b6579fb521a1b42
+  - enabled: 1
+    path: Assets/ShootGame/Scenes/_Scene_0.unity
+    guid: 07a93cf4fabc77449ab8d9ad3572c019
+  m_configObjects: {}
