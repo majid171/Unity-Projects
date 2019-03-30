@@ -30,16 +30,14 @@ public class Login : MonoBehaviour
         PlaySound();
 
         // Read from the JSON File to get user list
-        auth = GetData();
         UserIndex = -1;
-       
     }
 
-    // Update is called once per frame
-    void Update()
+    void testing()
     {
-        //Debug.Log(sounds[audioIndex].time);
-        
+        auth = new Users();
+        auth.users.Add(new User("admin", "admin", "NORMAL"));
+        WriteData();
     }
 
     public void ExitClick()
@@ -49,15 +47,23 @@ public class Login : MonoBehaviour
 
     public void LoginClick()
     {
+        auth = GetData();
+
         invalidText.text = "";
 
         for (int i = 0; i < auth.users.Count; i++)
         {
             User current = auth.users[i];
+
             if (current.username == UsernameField.text && current.password == PasswordField.text)
             {
                 UserIndex = i;
                 break;
+            }
+            else if (current.username == UsernameField.text && current.password != PasswordField.text)
+            {
+                auth.users[i].LoginAttempts++;
+                WriteData();
             }
         }
 
@@ -65,10 +71,15 @@ public class Login : MonoBehaviour
         {
             invalidText.text = "Invalid Credentials";
         }
+        else if (UserIndex >= 0 && auth.users[UserIndex].LoginAttempts >= 3)
+        {
+            invalidText.text = "User Blocked";
+        }
         else
         {
             initial = System.DateTime.Now;
             auth.users[UserIndex].history.logins.Add(System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
+            auth.users[UserIndex].LoginAttempts = 0;
             WriteData();
 
             // If logging in for the first time
@@ -107,5 +118,6 @@ public class Login : MonoBehaviour
     public static void reset()
     {
         UserIndex = - 1;
+        toolbar.isAdmin = false;
     }
 }

@@ -33,6 +33,7 @@ public class User
     public string username;
     public string password;
     public string status;
+    public int LoginAttempts;
     public History history;
 
     public User(string username, string password, string status)
@@ -40,6 +41,7 @@ public class User
         this.username = username;
         this.password = password;
         this.status = status;
+        this.LoginAttempts = 0;
     }
 }
 

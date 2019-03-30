@@ -55,7 +55,14 @@ public class UserAccounts : MonoBehaviour
 
     public void releaseClick()
     {
-
+        if (toolbar.isAdmin)
+        {
+            SceneManager.LoadScene("Release");
+        }
+        else
+        {
+            invalid.text = "Admin's Only";
+        }
     }
 
     public void exitClick()
