@@ -48,7 +48,6 @@ public class Login : MonoBehaviour
     public void LoginClick()
     {
         auth = GetData();
-
         invalidText.text = "";
 
         for (int i = 0; i < auth.users.Count; i++)
@@ -67,6 +66,38 @@ public class Login : MonoBehaviour
             }
         }
 
+        if (UserIndex < 0)
+        {
+            invalidText.text = "Invalid Credentials";
+            return;
+        }
+
+        if (auth.users[UserIndex].LoginAttempts >= 3)
+        {
+            auth.users[UserIndex].status = "BLOCKED";
+            WriteData();
+            invalidText.text = "User " + auth.users[UserIndex].username + " Blocked";
+            return;
+        }
+
+        initial = System.DateTime.Now;
+        auth.users[UserIndex].history.logins.Add(System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
+        auth.users[UserIndex].LoginAttempts = 0;
+        WriteData();
+
+        // If logging in for the first time
+        if (auth.users[UserIndex].status == "NEW")
+        {
+            auth.users[UserIndex].status = "NORMAL";
+            WriteData();
+            SceneManager.LoadScene("Change");
+        }
+        else
+        {
+            SceneManager.LoadScene("toolbar");
+        }
+
+        /*
         if (UserIndex < 0)
         {
             invalidText.text = "Invalid Credentials";
@@ -95,7 +126,7 @@ public class Login : MonoBehaviour
             }
 
         }
-
+        */
         UsernameField.text = "";
         PasswordField.text = "";
     }

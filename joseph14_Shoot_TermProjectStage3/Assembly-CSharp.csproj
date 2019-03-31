@@ -74,6 +74,7 @@
     <Compile Include="Assets\Main\Scripts\file.cs" />
     <Compile Include="Assets\Main\Scripts\HistoryMain.cs" />
     <Compile Include="Assets\Main\Scripts\Login.cs" />
+    <Compile Include="Assets\Main\Scripts\Release.cs" />
     <Compile Include="Assets\Main\Scripts\toolbar.cs" />
     <Compile Include="Assets\Main\Scripts\User.cs" />
     <Compile Include="Assets\Main\Scripts\UserAccounts.cs" />
