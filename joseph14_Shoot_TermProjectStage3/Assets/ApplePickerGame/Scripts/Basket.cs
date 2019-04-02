@@ -7,7 +7,7 @@ public class Basket : MonoBehaviour
 {
 
     [Header("Set Dynamically")]
-    public Text scoreGT; // a
+    public static Text scoreGT; // a
     void Start()
     {
         // Find a reference to the ScoreCounter GameObject
@@ -50,7 +50,8 @@ public class Basket : MonoBehaviour
             if (score > HighScore.score)
             {
                 HighScore.score = score;
-            }
+            }
+
         }
     }
 }

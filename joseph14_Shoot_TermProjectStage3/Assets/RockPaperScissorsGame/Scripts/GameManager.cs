@@ -11,20 +11,39 @@ public class GameManager : MonoBehaviour {
     public GameObject WinnerText, CountText, WinCountText, botChooseImage;
     public Sprite paperImage, rockImage, scissorsImage;
 
+    public int roundWinCount;
+    public static System.DateTime initial;
+    public Text roundScoreText;
+
     void start()
     {
-        // Empty
+        roundWinCount = 0;
+        roundScoreText.text = "Round Wins: " + roundWinCount;
+    
+        initial = System.DateTime.Now;
     }
 
     // Update is called once per frame
     void Update () {
+        WinCountText.GetComponent<Text>().text = "Wins: " + winCount;
+        roundScoreText.text = "Round Wins: " + roundWinCount;
+
         if (playersTurn && playerChoose == -1)
             return;
         BotChoose();
         CheckWinner();
         playerChoose = -1;
         playersTurn = true;
-        if (count == 10) reset();
+
+        // Who won that round
+        if (count == 10)
+        {
+            if (winCount > 1)
+            {
+                roundWinCount++;
+            }
+            reset();
+        }
 	}
 
     void CheckWinner()
@@ -39,7 +58,6 @@ public class GameManager : MonoBehaviour {
             //player wins
             WinnerText.GetComponent<Text>().text = "YOU WIN!";
             winCount++;
-            WinCountText.GetComponent<Text>().text = "Wins: " + winCount;
         }
         else
         {
@@ -76,6 +94,23 @@ public class GameManager : MonoBehaviour {
 
     void reset()
     {
-        SceneManager.LoadScene("Scene0RPS");       
+        winCount = 0;
+        playerChoose = -1;
+        botChoose = -1;
+        count = 0;
+        initial = System.DateTime.Now;
+    }
+
+    public void GameComplete()
+    {
+        Login.auth.users[Login.UserIndex].history.RPSGame.dates.Add(initial.ToString("yyyy/MM/dd HH:mm:ss"));
+        Login.auth.users[Login.UserIndex].history.RPSGame.scores.Add(roundWinCount + "");
+        Login.WriteData();
+    }
+
+    public void exit()
+    {
+        GameComplete();
+        SceneManager.LoadScene("GameMenu");
     }
 }

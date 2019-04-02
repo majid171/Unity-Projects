@@ -15,7 +15,8 @@ public class HighScore : MonoBehaviour
         }
         // Assign the high score to HighScore
         PlayerPrefs.SetInt("HighScore", score); // c
-    }
+    }
+
     void Update()
     { // b
         Text gt = this.GetComponent<Text>();
@@ -24,6 +25,7 @@ public class HighScore : MonoBehaviour
         if (score > PlayerPrefs.GetInt("HighScore"))
         { // d
             PlayerPrefs.SetInt("HighScore", score);
-        }
+        }
+
     }
-}
+}

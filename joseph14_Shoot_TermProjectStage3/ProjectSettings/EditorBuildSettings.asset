@@ -45,6 +45,9 @@ EditorBuildSettings:
     path: Assets/Main/Scenes/Release.unity
     guid: 3ee262bb86aae5d4282892601944fbe1
   - enabled: 1
+    path: Assets/Main/Scenes/GameMenu.unity
+    guid: 57ab8520acf9ec044862ebed4ed46f00
+  - enabled: 1
     path: Assets/MemoryGame/Scenes/StartMenuMemory.unity
     guid: 3c0133776fe84486594577a97ddd8ae5
   - enabled: 1
@@ -63,17 +66,20 @@ EditorBuildSettings:
     path: Assets/ShootGame/Scenes/StartScene.unity
     guid: 1a01ce03e2df3d54a8fbb56e9279670f
   - enabled: 1
+    path: Assets/ShootGame/Scenes/_Scene_0.unity
+    guid: 07a93cf4fabc77449ab8d9ad3572c019
+  - enabled: 1
     path: Assets/ShootGame/Scenes/MainScene.unity
     guid: 8d72936b0c2f6994885edc8568852b1b
-  - enabled: 1
-    path: Assets/ShootGame/Scenes/LevelsScene.unity
-    guid: e757fb2929b7b914f8f5edb646586c3d
   - enabled: 1
     path: Assets/ShootGame/Scenes/ConfigScene.unity
     guid: 8f20030940310df409d004b3fba9a110
   - enabled: 1
-    path: Assets/ShootGame/Scenes/AudioMenu.unity
-    guid: bbde21772823f7b449015c4667fc2c7a
+    path: Assets/ShootGame/Scenes/LevelsScene.unity
+    guid: e757fb2929b7b914f8f5edb646586c3d
+  - enabled: 1
+    path: Assets/ShootGame/Scenes/BronzeScene.unity
+    guid: 1860bc3be0fd66a48aa708c9fd293284
   - enabled: 1
     path: Assets/ShootGame/Scenes/BackgroundScene.unity
     guid: 11d022e7a15f3ff40a368cbf2df8691d
@@ -81,15 +87,18 @@ EditorBuildSettings:
     path: Assets/ShootGame/Scenes/EnemiesMenu.unity
     guid: ff9d9fd176eb7364d9fa80f8df5f7972
   - enabled: 1
-    path: Assets/ShootGame/Scenes/BronzeScene.unity
-    guid: 1860bc3be0fd66a48aa708c9fd293284
-  - enabled: 1
-    path: Assets/ShootGame/Scenes/SilverScene.unity
-    guid: 9dd4e87ffdd081a458a2fb7d142019b5
+    path: Assets/ShootGame/Scenes/AudioMenu.unity
+    guid: bbde21772823f7b449015c4667fc2c7a
   - enabled: 1
     path: Assets/ShootGame/Scenes/GoldScene.unity
     guid: 1a778cb9aa1d7b448b6579fb521a1b42
   - enabled: 1
-    path: Assets/ShootGame/Scenes/_Scene_0.unity
-    guid: 07a93cf4fabc77449ab8d9ad3572c019
+    path: Assets/ShootGame/Scenes/SilverScene.unity
+    guid: 9dd4e87ffdd081a458a2fb7d142019b5
+  - enabled: 1
+    path: Assets/ApplePickerGame/Scenes/_Scene_0_Apple.unity
+    guid: c7d7cfec9f51d9d48acec2167c45aff1
+  - enabled: 1
+    path: Assets/RockPaperScissorsGame/Scenes/Scene0RPS.unity
+    guid: 3757915b48a93a943958ecfc1f3ee542
   m_configObjects: {}

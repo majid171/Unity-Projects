@@ -4,8 +4,10 @@ using UnityEngine; // Required for Unity
 using UnityEngine.SceneManagement; // For loading & reloading of scenes
 using UnityEngine.UI;
 
+
 public class Main : MonoBehaviour
 {
+
     // Static members that need to be accessed across the game
     public static bool isPlaying = true;
     public static int score = 0;
@@ -20,6 +22,7 @@ public class Main : MonoBehaviour
     public Text levelText;
     public GameObject[] enemiesTest;
     public static AudioSource[] sounds;
+
 
     static public Main S; // A singleton for Main
     static Dictionary<WeaponType, WeaponDefinition> WEAP_DICT; // a
@@ -86,6 +89,7 @@ public class Main : MonoBehaviour
 
     void Awake()
     {
+
         sounds = GetComponents<AudioSource>();
         stopAllSounds();
         playBGMusic();

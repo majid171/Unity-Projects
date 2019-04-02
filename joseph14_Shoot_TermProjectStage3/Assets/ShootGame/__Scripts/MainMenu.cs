@@ -37,6 +37,9 @@ public class MainMenu : MonoBehaviour
     void historyClick()
     {
         click.Play();
+        toolbar.isGame = true;
+        toolbar.game = 0;
+        SceneManager.LoadScene("History");
     }
 
     void playClick()

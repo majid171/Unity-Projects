@@ -11,7 +11,6 @@ public class AudioBG : MonoBehaviour
     // Singelton for the class
     public static AudioBG instance = null;
 
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -32,12 +31,19 @@ public class AudioBG : MonoBehaviour
 
     public static void PlayMusic()
     {
-        sounds[AudioIndex].Play();
+        if (!sounds[AudioIndex].isPlaying)
+        {
+            sounds[AudioIndex].Play();
+
+        }
     }
 
     public static void PauseMusic()
     {
-        sounds[AudioIndex].Pause();
+        if (sounds[AudioIndex].isPlaying)
+        {
+            sounds[AudioIndex].Pause();
+        }
     }
 
     public static void StopMusic()
@@ -47,7 +53,10 @@ public class AudioBG : MonoBehaviour
 
     public static void ResumeMusic()
     {
-        sounds[AudioIndex].UnPause();
+        if (!sounds[AudioIndex].isPlaying)
+        {
+            sounds[AudioIndex].UnPause();
+        }
     }
 
     public static void ButtonSound()

@@ -73,6 +73,7 @@
     <Compile Include="Assets\Main\Scripts\Create.cs" />
     <Compile Include="Assets\Main\Scripts\Delete.cs" />
     <Compile Include="Assets\Main\Scripts\file.cs" />
+    <Compile Include="Assets\Main\Scripts\GameMenu.cs" />
     <Compile Include="Assets\Main\Scripts\HistoryMain.cs" />
     <Compile Include="Assets\Main\Scripts\Login.cs" />
     <Compile Include="Assets\Main\Scripts\Release.cs" />

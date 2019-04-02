@@ -91,7 +91,7 @@ public class Player : MonoBehaviour
             }
             else
             {
-                Debug.Log("Error");
+               // Debug.Log("Error");
             }
         }
     }

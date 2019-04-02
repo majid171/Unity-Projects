@@ -897,7 +897,6 @@ GameObject:
   - component: {fileID: 1688463846}
   - component: {fileID: 1688463851}
   - component: {fileID: 1688463845}
-  - component: {fileID: 1688463853}
   - component: {fileID: 1688463852}
   m_Layer: 5
   m_Name: Canvas
@@ -1140,14 +1139,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!81 &1688463853
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1688463844}
-  m_Enabled: 1
 --- !u!1 &1692611926
 GameObject:
   m_ObjectHideFlags: 0

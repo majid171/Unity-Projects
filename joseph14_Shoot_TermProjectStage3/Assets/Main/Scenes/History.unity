@@ -713,6 +713,14 @@ MonoBehaviour:
     type: 3}
   HeaderOther: {fileID: 1923659378001748202, guid: 172eb9795175e3841b481da2fe654218,
     type: 3}
+  HeaderShoot: {fileID: 222545698435451359, guid: b3ced93d7c0a9054a92ee0bae1e0839c,
+    type: 3}
+  HeaderGame: {fileID: 3613416291597675292, guid: b7797c8cfc6341e429cda1f22b426a81,
+    type: 3}
+  EntryShoot: {fileID: 8993419643059291042, guid: d255b29e909c7d74b98041ac0374cf0e,
+    type: 3}
+  EntryGame: {fileID: 3802615590297754976, guid: fc9f99e90401e084daa80fc44668dc62,
+    type: 3}
 --- !u!1 &1343572416
 GameObject:
   m_ObjectHideFlags: 0

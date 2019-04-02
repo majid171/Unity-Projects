@@ -23,8 +23,7 @@ public class LoseMenu : MonoBehaviour
 
     void quitClick()
     {
-        UnityEditor.EditorApplication.isPlaying = false;
-        Application.Quit();
+        SceneManager.LoadScene("GameMenu");
     }
 
     void NewGameClick()

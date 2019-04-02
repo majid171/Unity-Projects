@@ -24,7 +24,8 @@ public class StartMenu : MonoBehaviour
     void quitClick()
     {
         click.Play();
-        UnityEditor.EditorApplication.isPlaying = false;
+        //UnityEditor.EditorApplication.isPlaying = false;
+        SceneManager.LoadScene("Toolbar");
     }
 
     void startClick()

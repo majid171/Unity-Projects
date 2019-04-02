@@ -13,6 +13,7 @@ public class GameScene : MonoBehaviour
     public static int score;
     public static int numberOfCards = 12;
     public static int numberOfUniqueCards;
+    public static System.DateTime initial;
 
     public static AudioSource[] sounds;
 
@@ -38,10 +39,11 @@ public class GameScene : MonoBehaviour
         sounds = GetComponents<AudioSource>();
         totalTime = 0;
         StopAllSounds();
+        initial = System.DateTime.Now;
 
         float rowCount = 4.5f;  
         float zPos = 0.9f;      
-        float xPos = -10;     
+        float xPos = -6;     
         for (int i = 1; i <= numberOfCards; i++)
         {
             GameObject cardClone = Instantiate(cardPrefab, new Vector3(xPos + (i % 5) * 2f, rowCount, zPos), Quaternion.identity);
@@ -84,13 +86,18 @@ public class GameScene : MonoBehaviour
         if (GameObject.FindGameObjectsWithTag("Card").Length == 0)
         {
             isPlaying = false;
+            Login.auth.users[Login.UserIndex].history.MemoryGame.scores.Add(GameScene.score + "");
+            Login.auth.users[Login.UserIndex].history.MemoryGame.dates.Add(initial.ToString("yyyy/MM/dd HH:mm:ss"));
+            Login.WriteData();
             SceneManager.LoadScene("WinMemory");
-
         }
 
-        if(score <= 0)
+        if (score <= 0)
         {
             isPlaying = false;
+            Login.auth.users[Login.UserIndex].history.MemoryGame.scores.Add("0");
+            Login.auth.users[Login.UserIndex].history.MemoryGame.dates.Add(initial.ToString("yyyy/MM/dd HH:mm:ss"));
+            Login.WriteData();
             SceneManager.LoadScene("LoseMemory");
         }
     }

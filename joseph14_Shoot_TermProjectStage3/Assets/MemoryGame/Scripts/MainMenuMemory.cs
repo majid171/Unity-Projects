@@ -25,8 +25,9 @@ public class MainMenuMemory : MonoBehaviour
 
     void exitClick()
     {
-        UnityEditor.EditorApplication.isPlaying = false;
-        Application.Quit();
+        //UnityEditor.EditorApplication.isPlaying = false;
+        //Application.Quit();
+        SceneManager.LoadScene("GameMenu");
     }
 
     void startClick()

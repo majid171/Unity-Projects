@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement; // b
+using UnityEngine.UI;
 
 public class ApplePicker : MonoBehaviour
 {
@@ -12,8 +13,19 @@ public class ApplePicker : MonoBehaviour
     public float basketSpacingY = 2f;
     public List<GameObject> basketList;
 
+    public Button exit;
+    public static System.DateTime initial;
+
+
     void Start()
     {
+        initial = System.DateTime.Now;
+
+        exit.onClick.AddListener(delegate {
+            GameComplete();
+            SceneManager.LoadScene("GameMenu");
+        });
+
         basketList = new List<GameObject>(); // c
         for (int i = 0; i < numBaskets; i++)
         {
@@ -46,7 +58,15 @@ public class ApplePicker : MonoBehaviour
         // If there are no Baskets left, restart the game
         if (basketList.Count == 0)
         {
+            GameComplete();
             SceneManager.LoadScene("_Scene_0_Apple"); // a
         }
+    }
+
+    public void GameComplete()
+    {
+        Login.auth.users[Login.UserIndex].history.AppleGame.dates.Add(initial.ToString("yyyy/MM/dd HH:mm:ss"));
+        Login.auth.users[Login.UserIndex].history.AppleGame.scores.Add(Basket.scoreGT.text);
+        Login.WriteData();
     }
 }

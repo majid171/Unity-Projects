@@ -31,6 +31,6 @@ public class WinMenu : MonoBehaviour
 
     void quitClick()
     {
-        UnityEditor.EditorApplication.isPlaying = false;
+        SceneManager.LoadScene("GameMenu");
     }
 }
