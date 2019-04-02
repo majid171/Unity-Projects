@@ -8,7 +8,6 @@ public class UserAccounts : MonoBehaviour
 {
 
     public Button create, delete, change, release, exit;
-    public AudioSource[] sounds;
     public Text invalid;
 
     // Start is called before the first frame update
@@ -20,12 +19,12 @@ public class UserAccounts : MonoBehaviour
         release.onClick.AddListener(releaseClick);
         exit.onClick.AddListener(exitClick);
 
-        sounds = GetComponents<AudioSource>();
-        sounds[Login.audioIndex].Play();
     }
 
     public void createClick()
     {
+        AudioBG.ButtonSound();
+
         if (toolbar.isAdmin)
         {
             SceneManager.LoadScene("Create");
@@ -38,6 +37,8 @@ public class UserAccounts : MonoBehaviour
 
     public void deleteClick()
     {
+        AudioBG.ButtonSound();
+
         if (toolbar.isAdmin)
         {
             SceneManager.LoadScene("Delete");
@@ -50,11 +51,15 @@ public class UserAccounts : MonoBehaviour
 
     public void changeClick()
     {
+        AudioBG.ButtonSound();
+
         SceneManager.LoadScene("Change");
     }
 
     public void releaseClick()
     {
+        AudioBG.ButtonSound();
+
         if (toolbar.isAdmin)
         {
             SceneManager.LoadScene("Release");
@@ -67,6 +72,8 @@ public class UserAccounts : MonoBehaviour
 
     public void exitClick()
     {
+        AudioBG.ButtonSound();
+
         SceneManager.LoadScene("File");
     }
 }

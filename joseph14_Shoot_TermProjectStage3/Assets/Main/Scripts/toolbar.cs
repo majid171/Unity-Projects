@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class toolbar : MonoBehaviour
 {
     public Button file, shoot, apple, rps, memory;
-    public AudioSource[] sounds;
     public static bool isAdmin;
 
     // Start is called before the first frame update
@@ -20,9 +19,6 @@ public class toolbar : MonoBehaviour
         memory.onClick.AddListener(memoryClick);
 
         isAdmin = checkIfAdmin();
-
-        sounds = GetComponents<AudioSource>();
-        sounds[Login.audioIndex].Play();
     }
 
     // Update is called once per frame
@@ -33,26 +29,32 @@ public class toolbar : MonoBehaviour
 
     void fileClick()
     {
+        AudioBG.ButtonSound();
+
         SceneManager.LoadScene("File");
     }
 
     void shootClick()
     {
+        AudioBG.ButtonSound();
 
     }
 
     void appleClick()
     {
+        AudioBG.ButtonSound();
 
     }
 
     void rpsClick()
     {
+        AudioBG.ButtonSound();
 
     }
 
     void memoryClick()
     {
+        AudioBG.ButtonSound();
 
     }
 

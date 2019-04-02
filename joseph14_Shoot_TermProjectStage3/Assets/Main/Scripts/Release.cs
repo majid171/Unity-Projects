@@ -16,6 +16,8 @@ public class Release : MonoBehaviour
     {
         free.onClick.AddListener(delegate
         {
+            AudioBG.ButtonSound();
+
 
             bool found = false;
             for (int i = 0; i < Login.auth.users.Count; i++)
@@ -46,6 +48,8 @@ public class Release : MonoBehaviour
         });
 
         exit.onClick.AddListener(delegate {
+            AudioBG.ButtonSound();
+
             SceneManager.LoadScene("UserAccounts");
         });
 

@@ -19,6 +19,8 @@ public class HistoryMain : MonoBehaviour
     {
         exit.onClick.AddListener(delegate
         {
+            AudioBG.ButtonSound();
+
             SceneManager.LoadScene("File");
         });
 
@@ -38,7 +40,12 @@ public class HistoryMain : MonoBehaviour
                 //t[2].text = Login.auth.users[Login.UserIndex].history.durations[Login.auth.users[Login.UserIndex].history.durations.Count - 1];
                 t[3].text = Login.auth.users[0].status;
                // Debug.Log(Login.auth.users[Login.UserIndex].history.logins[0]);
-                if (Login.auth.users[i].history.logins.Count < 1)
+                if (Login.auth.users[i].history.logins.Count == 0)
+                {
+                    t[1].text = "No Previous Logins";
+                    t[2].text = "No Previous Logins";
+                }
+                else if (Login.auth.users[i].history.logins.Count == 1)
                 {
                     t[1].text = Login.auth.users[i].history.logins[0];
                     t[2].text = "No previous Logins";

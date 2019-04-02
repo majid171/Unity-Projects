@@ -33,6 +33,8 @@ public class BackgroundMain : MonoBehaviour
 
     public void saveClick()
     {
+        AudioBG.ButtonSound();
+
         if (options.value == 0)
         {
             mat.mainTexture = bg1.texture;

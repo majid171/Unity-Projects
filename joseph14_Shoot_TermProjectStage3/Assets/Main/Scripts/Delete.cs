@@ -20,6 +20,8 @@ public class Delete : MonoBehaviour
 
     public void deleteClick()
     {
+        AudioBG.ButtonSound();
+
         if (username.text == "admin")
         {
             invalid.text = "Cannot delete Admin";
@@ -35,6 +37,8 @@ public class Delete : MonoBehaviour
         }
         else
         {
+            AudioBG.ButtonSound();
+
             invalid.text = "User Does Not Exist";
         }
     }

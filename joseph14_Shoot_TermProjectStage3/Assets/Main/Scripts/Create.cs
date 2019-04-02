@@ -20,6 +20,8 @@ public class Create : MonoBehaviour
 
     public void saveClick()
     {
+        AudioBG.ButtonSound();
+
         if (!contains(username.text))
         {
             Login.auth.users.Add(new User(username.text, username.text, "NEW"));
@@ -35,6 +37,8 @@ public class Create : MonoBehaviour
 
     public void exitClick()
     {
+        AudioBG.ButtonSound();
+
         SceneManager.LoadScene("UserAccounts");
     }
 

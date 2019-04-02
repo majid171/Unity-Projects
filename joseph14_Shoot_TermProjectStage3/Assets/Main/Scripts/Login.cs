@@ -12,22 +12,22 @@ public class Login : MonoBehaviour
     public Button LoginButton;
     public InputField UsernameField;
     public InputField PasswordField;
-    public static AudioSource[] sounds;
-    public static int audioIndex = 0;
+
     public Text invalidText;
 
     public static Users auth;
     public static int UserIndex;
     public static string path = "Assets/Main/JSON/users.json";
     public static System.DateTime initial;
+    public static bool isNew;
 
     // Start is called before the first frame update
     void Start()
     {
+        isNew = false;
         ExitButton.onClick.AddListener(ExitClick);
         LoginButton.onClick.AddListener(LoginClick);
-        sounds = GetComponents<AudioSource>();
-        PlaySound();
+
 
         // Read from the JSON File to get user list
         UserIndex = -1;
@@ -42,11 +42,13 @@ public class Login : MonoBehaviour
 
     public void ExitClick()
     {
+        AudioBG.ButtonSound();
         UnityEditor.EditorApplication.isPlaying = false;
     }
 
     public void LoginClick()
     {
+        AudioBG.ButtonSound();
         auth = GetData();
         invalidText.text = "";
 
@@ -88,6 +90,7 @@ public class Login : MonoBehaviour
         // If logging in for the first time
         if (auth.users[UserIndex].status == "NEW")
         {
+            isNew = true;
             auth.users[UserIndex].status = "NORMAL";
             WriteData();
             SceneManager.LoadScene("Change");
@@ -131,10 +134,6 @@ public class Login : MonoBehaviour
         PasswordField.text = "";
     }
 
-    public void PlaySound()
-    {
-        sounds[audioIndex].Play();
-    }
 
     public Users GetData()
     {

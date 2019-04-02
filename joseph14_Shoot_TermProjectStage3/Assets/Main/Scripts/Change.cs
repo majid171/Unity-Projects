@@ -19,11 +19,22 @@ public class Change : MonoBehaviour
 
     public void updateClick()
     {
+        AudioBG.ButtonSound();
+
         if (Login.auth.users[Login.UserIndex].password != password.text)
         {
             Login.auth.users[Login.UserIndex].password = password.text;
-            SceneManager.LoadScene("UserAccounts");
             Login.WriteData();
+
+            if (Login.isNew)
+            {
+                Login.isNew = false;
+                SceneManager.LoadScene("Toolbar");
+            }
+            else
+            {
+                SceneManager.LoadScene("UserAccounts");
+            }
         }
         else
         {

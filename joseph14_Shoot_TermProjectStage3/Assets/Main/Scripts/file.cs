@@ -8,8 +8,7 @@ using System;
 public class file : MonoBehaviour
 {
 
-    public Button accts, config, history, logout;
-    public AudioSource[] sounds;
+    public Button accts, config, history, logout, exit;
 
     // Start is called before the first frame update
     void Start()
@@ -19,9 +18,12 @@ public class file : MonoBehaviour
         history.onClick.AddListener(historyClick);
         logout.onClick.AddListener(logoutClick);
 
-        sounds = GetComponents<AudioSource>();
-        sounds[Login.audioIndex].Play();
+        exit.onClick.AddListener(delegate
+        {
+            AudioBG.ButtonSound();
 
+            SceneManager.LoadScene("Toolbar");
+        });
 
     }
 
@@ -35,21 +37,29 @@ public class file : MonoBehaviour
 
     public void acctsClick()
     {
+        AudioBG.ButtonSound();
+
         SceneManager.LoadScene("UserAccounts");
     }
 
     public void configClick()
     {
+        AudioBG.ButtonSound();
+
         SceneManager.LoadScene("Configurations");
     }
 
     public void historyClick()
     {
+        AudioBG.ButtonSound();
+
         SceneManager.LoadScene("History");
     }
 
     public void logoutClick()
     {
+        AudioBG.ButtonSound();
+
         Login.auth.users[Login.UserIndex].history.durations.Add((Math.Truncate((System.DateTime.Now.Subtract(Login.initial).TotalMinutes) * 100.0) / 100.0).ToString());
         Login.WriteData();
         Login.reset();

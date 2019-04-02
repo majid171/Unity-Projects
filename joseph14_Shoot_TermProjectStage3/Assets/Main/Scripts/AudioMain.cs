@@ -14,9 +14,10 @@ public class AudioMain : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AudioBG.PauseMusic();
         save.onClick.AddListener(saveClick);
         sounds = GetComponents<AudioSource>();
-
+ 
         dp.onValueChanged.AddListener(delegate
         {
             StopAllSounds();
@@ -26,10 +27,15 @@ public class AudioMain : MonoBehaviour
 
     public void saveClick()
     {
-        Login.audioIndex = dp.value;
+        StopAllSounds();
+        AudioBG.ButtonSound();
+
+        AudioBG.AudioIndex = dp.value;
+        AudioBG.PlayMusic();
+        //AudioBG.ResumeMusic();
         SceneManager.LoadScene("Configurations");
     }
-
+    
     public void StopAllSounds()
     {
         for (int i = 0; i < sounds.Length; i++)
