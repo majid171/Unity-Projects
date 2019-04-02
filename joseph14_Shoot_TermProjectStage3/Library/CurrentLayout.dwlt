@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 548}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -114,7 +114,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 498}
   m_MaxSize: {x: 14004, y: 14048}
   vertical: 0
-  controlID: 17365
+  controlID: 102
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 498}
   m_MaxSize: {x: 10002, y: 14048}
   vertical: 1
-  controlID: 17338
+  controlID: 103
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 224}
   m_MaxSize: {x: 8006, y: 4024}
   vertical: 0
-  controlID: 17339
+  controlID: 104
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -210,8 +210,8 @@ MonoBehaviour:
     y: 0
     width: 1143
     height: 668
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 204, y: 224}
+  m_MaxSize: {x: 4004, y: 4024}
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 14}
@@ -264,8 +264,8 @@ MonoBehaviour:
     y: 0
     width: 425
     height: 947
-  m_MinSize: {x: 277, y: 74}
-  m_MaxSize: {x: 4002, y: 4024}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -381,23 +381,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 920a0000
-      m_LastClickedID: 0
-      m_ExpandedIDs: c28bfefff08bfeffee8cfeffc696feff5899feffb299feffa0a0feff0aa1feff22a2feff20a6feffe0a6feff2ca8feffa4adfeff22b0feff76b1feff7abffeff3ec0feff88c5feffb4f8feffecfafeff18fffeffea03ffffda05ffff1207ffff4208ffff9009ffffbe0affff5c0dffff500fffff5a12fffffc12ffff2614ffffd414ffff9215ffff8c16ffff4617ffff0818fffff618ffff861affff641cffff461effff0829ffff802cffffe42dffff6630ffff2437ffff203cfffff047ffff3657ffff965dffff1a77ffff187dffff0489ffff128fffff8e98ffff1699ffff8e9affffe69bffff2e9cffff6c9cffffa89cffffe89cffff289dffff649dffffa49dffffe09dffff6c9effff38adffff1cb1ffff0cb3ffff34b4ffff82b4ffffe2b5ffff80b6ffff8cb7ffff04c7ffffbeccffff7acdfffff6cdfffffaceffff28d7ffff2cddffff9ee0ffff42ecffffe8ecffff20edffffb6f1ffffc8f2ffff78faffff3cfbffffd4fbffffbe310000ce470000e64700004c560000ac640000f0640000d472000022730000dcae0000ea160100f8160100
+      m_SelectedIDs: 00480000
+      m_LastClickedID: 18432
+      m_ExpandedIDs: daebffff66f1ffffb8f1ffff1cf2ffffbaf2ffff2cf3ffff8ef3ffff10f4ffff70f4ffff24f5ffffa6f5ffff28f6ffffa4f6ffff0af7ffff78f7ffffd4fbffff1048000028480000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: Directional Light
+        m_OriginalName: Directional Light
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: 14314
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 8}
       m_SearchString: 
@@ -550,20 +550,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/ShootGame/Scenes
+    - Assets/Main/Scenes
   m_ViewMode: 1
   m_StartGridSize: 74
   m_LastFolders:
-  - Assets/ShootGame/Scenes
+  - Assets/Main/Scenes
   m_LastFoldersGridSize: 74
   m_LastProjectPath: C:\Users\Majid Joseph\Documents\University\W19\cs280\Projects\joseph14_Shoot_TermProjectStage3
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 162}
-    m_SelectedIDs: 400c0000
-    m_LastClickedID: 3136
-    m_ExpandedIDs: 00000000f2090000b40b0000a80c0000040d000000ca9a3b
+    scrollPos: {x: 0, y: 60}
+    m_SelectedIDs: 4a0a0000
+    m_LastClickedID: 2634
+    m_ExpandedIDs: 00000000fa090000bc0b0000b20c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -591,7 +591,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000f2090000b40b0000a80c0000040d000000ca9a3b
+    m_ExpandedIDs: 00000000fa090000bc0b0000b20c0000120d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
