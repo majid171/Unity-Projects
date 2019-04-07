@@ -63,9 +63,9 @@ public class Player : MonoBehaviour
     {
         Transform rootT = other.gameObject.transform.root;
         GameObject go = rootT.gameObject;
-        //print("Triggered: " + go.name);
         GameObject goOther = other.gameObject;
         // Debug.Log(goOther.tag);
+
 
         if (goOther.tag == "ProjectileEnemy")
         {
@@ -74,6 +74,7 @@ public class Player : MonoBehaviour
         }
         else
         {
+
             if (go == lastTriggerGo)
             { // c
                 return;
@@ -91,7 +92,7 @@ public class Player : MonoBehaviour
             }
             else
             {
-               // Debug.Log("Error");
+              // Debug.Log("Error");
             }
         }
     }

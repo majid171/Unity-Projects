@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6311045106834870196}
   - component: {fileID: 769001184522120619}
   - component: {fileID: 4473048812105560043}
-  m_Layer: 12
+  m_Layer: 13
   m_Name: PowerUp
   m_TagString: PowerUp
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 2943869724578393655}
   - component: {fileID: 4005018087610337399}
   - component: {fileID: 5976190480595569128}
-  m_Layer: 12
+  m_Layer: 13
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

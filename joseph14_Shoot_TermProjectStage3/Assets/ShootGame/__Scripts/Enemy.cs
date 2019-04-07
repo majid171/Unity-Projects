@@ -83,6 +83,7 @@ public class Enemy : MonoBehaviour
     void OnCollisionEnter(Collision coll)
     { // a
         GameObject otherGO = coll.gameObject;
+        Debug.Log(otherGO.tag);
         switch (otherGO.tag)
         {
             case "ProjectilePlayer": // b

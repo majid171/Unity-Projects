@@ -17,7 +17,17 @@ public class Login : MonoBehaviour
 
     public static Users auth;
     public static int UserIndex;
+    
+    /*
+     * Note:
+     * To rebuild the game into an executable,
+     * then you must comment the first 'path' declaration,
+     * if you want to play in the inspector,
+     * then you must comment the second 'path' declaration
+     */
     public static string path = "Assets/Main/JSON/users.json";
+    //public static string path = "joseph14_Shoot_TermProjectStage3_Data/users.JSON";
+
     public static System.DateTime initial;
     public static bool isNew;
 
@@ -43,7 +53,8 @@ public class Login : MonoBehaviour
     public void ExitClick()
     {
         AudioBG.ButtonSound();
-        UnityEditor.EditorApplication.isPlaying = false;
+        // UnityEditor.EditorApplication.isPlaying = false;
+        Application.Quit();
     }
 
     public void LoginClick()

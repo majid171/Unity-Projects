@@ -17,14 +17,11 @@ public class _Scene_0_Menu : MonoBehaviour
     public GameObject bgImg;
     public Text timeText;
     public static float time;
-    public static System.DateTime initial;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        initial = System.DateTime.Now;
-
         toggle.onClick.AddListener(toggleClick);
         restart.onClick.AddListener(restartClick);
         exit.onClick.AddListener(exitClick);
@@ -80,7 +77,7 @@ public class _Scene_0_Menu : MonoBehaviour
 
     void exitClick()
     {
-        
+        // Changed the logic so that a game only counts when you die, not when you exit
         Main.score = 0;
         Main.Enemy0Total = 0;
         Main.Enemy1Total = 0;
@@ -94,7 +91,6 @@ public class _Scene_0_Menu : MonoBehaviour
 
     void restartClick()
     {
-        GameComplete();
         Main.isPlaying = true;
         Main.score = 0;
         Main.Enemy0Total = 0;
@@ -106,32 +102,5 @@ public class _Scene_0_Menu : MonoBehaviour
         Main.DestroyAllObjects();
         Main.currLevel = 0;
         //SceneManager.LoadScene("_Scene_0");
-    }
-
-    public void GameComplete()
-    {
-        string level = "";
-
-        if (Main.currLevel == 0)
-        {
-            level = "Bronze";
-        }
-        else if (Main.currLevel == 1)
-        {
-            level = "Silver";
-        }
-        else if (Main.currLevel == 2)
-        {
-            level = "Gold";
-        }
-        else if (Main.currLevel == 3)
-        {
-            level = "Infinite";
-        }
-
-        Login.auth.users[Login.UserIndex].history.ShooterGame.dates.Add(initial.ToString("yyyy/MM/dd HH:mm:ss"));
-        Login.auth.users[Login.UserIndex].history.ShooterGame.scores.Add(Main.score + "");
-        Login.auth.users[Login.UserIndex].history.ShooterGame.levels.Add(level);
-        Login.WriteData();
     }
 }

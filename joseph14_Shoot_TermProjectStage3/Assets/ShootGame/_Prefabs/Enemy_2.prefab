@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7799104203218170022}
   - component: {fileID: 1982095065283393441}
   - component: {fileID: 7391227885347037421}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Reactor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 1797575222328829209}
   - component: {fileID: 8629827432644705829}
   - component: {fileID: 2677551198289579494}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Enemy_2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -166,6 +166,7 @@ MonoBehaviour:
   showingDamage: 0
   damageDoneTime: 0
   notifiedOfDestruction: 0
+  timer: 0
   projectilePrefab: {fileID: 3559454900790387087, guid: ae25984fbaafba243a6a8144d6080f80,
     type: 3}
   projectileSpeed: 40
@@ -207,7 +208,7 @@ GameObject:
   - component: {fileID: 7253609317747775308}
   - component: {fileID: 3057466639238934976}
   - component: {fileID: 4290519771300767605}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Wing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -298,7 +299,7 @@ GameObject:
   - component: {fileID: 3880782765008020688}
   - component: {fileID: 3656532478338501906}
   - component: {fileID: 1604834843461949109}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cockpit
   m_TagString: Untagged
   m_Icon: {fileID: 0}

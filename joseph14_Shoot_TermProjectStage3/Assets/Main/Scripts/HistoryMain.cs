@@ -130,7 +130,7 @@ public class HistoryMain : MonoBehaviour
                     t[0].text = Login.auth.users[i].username;
                     //t[1].text = Login.auth.users[Login.UserIndex].history.logins[Login.auth.users[Login.UserIndex].history.logins.Count - 1];
                     //t[2].text = Login.auth.users[Login.UserIndex].history.durations[Login.auth.users[Login.UserIndex].history.durations.Count - 1];
-                    t[3].text = Login.auth.users[0].status;
+                    t[3].text = Login.auth.users[i].status;
                     // Debug.Log(Login.auth.users[Login.UserIndex].history.logins[0]);
                     if (Login.auth.users[i].history.logins.Count == 0)
                     {

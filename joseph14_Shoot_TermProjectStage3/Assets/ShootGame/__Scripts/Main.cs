@@ -22,6 +22,8 @@ public class Main : MonoBehaviour
     public Text levelText;
     public GameObject[] enemiesTest;
     public static AudioSource[] sounds;
+    public static System.DateTime initial;
+
 
 
     static public Main S; // A singleton for Main
@@ -89,6 +91,7 @@ public class Main : MonoBehaviour
 
     void Awake()
     {
+        initial = System.DateTime.Now;
 
         sounds = GetComponents<AudioSource>();
         stopAllSounds();
@@ -225,6 +228,7 @@ public class Main : MonoBehaviour
 
     public void Restart()
     {
+        GameComplete();
         // Reload _Scene_0 to restart the game
         score = 0;
         Enemy0Total = 0;
@@ -233,6 +237,7 @@ public class Main : MonoBehaviour
         Enemy3Total = 0;
         Enemy4Total = 0;
         currLevel = 0;
+        initial = System.DateTime.Now;
         SceneManager.LoadScene("_Scene_0");
     }
 
@@ -311,5 +316,32 @@ public class Main : MonoBehaviour
         {
             sounds[i].Stop();
         }
-    }    
+    }
+
+    public void GameComplete()
+    {
+        string level = "";
+
+        if (Main.currLevel == 0)
+        {
+            level = "Bronze";
+        }
+        else if (Main.currLevel == 1)
+        {
+            level = "Silver";
+        }
+        else if (Main.currLevel == 2)
+        {
+            level = "Gold";
+        }
+        else if (Main.currLevel == 3)
+        {
+            level = "Infinite";
+        }
+
+        Login.auth.users[Login.UserIndex].history.ShooterGame.dates.Add(initial.ToString("yyyy/MM/dd HH:mm:ss"));
+        Login.auth.users[Login.UserIndex].history.ShooterGame.scores.Add(Main.score + "");
+        Login.auth.users[Login.UserIndex].history.ShooterGame.levels.Add(level);
+        Login.WriteData();
+    }
 }

@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - ProjectilePlayer
+  - Apple
+  - ProjectileEnemy
+  - Enemy
+  - Player_
+  - PowerUp
+  - PowerUpBox
   layers:
   - Default
   - TransparentFX
@@ -14,11 +21,11 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player_
+  - Enemy
+  - ProjectilePlayer
+  - ProjectileEnemy
+  - PowerUp
   - 
   - 
   - 

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4200692536936239527}
   - component: {fileID: 3629940291054424561}
   - component: {fileID: 62709464205219193}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cockpit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 6166490658724714450}
   - component: {fileID: 1922546614573520449}
   - component: {fileID: 2882341642325289079}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Fuselage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -195,7 +195,7 @@ GameObject:
   - component: {fileID: 6174685679776758228}
   - component: {fileID: 1181661995027794819}
   - component: {fileID: 5997384115906505635}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: WingL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -287,7 +287,7 @@ GameObject:
   - component: {fileID: 181790354132701980}
   - component: {fileID: 1254029285418659885}
   - component: {fileID: 6563957080102947306}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: WingR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -379,7 +379,7 @@ GameObject:
   - component: {fileID: 6590011232414716640}
   - component: {fileID: 1482617005907029687}
   - component: {fileID: 8214085563106575101}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Enemy_4
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -443,6 +443,7 @@ MonoBehaviour:
   showingDamage: 0
   damageDoneTime: 0
   notifiedOfDestruction: 0
+  timer: 0
   projectilePrefab: {fileID: 8943697993582345820}
   projectileSpeed: 40
   parts:

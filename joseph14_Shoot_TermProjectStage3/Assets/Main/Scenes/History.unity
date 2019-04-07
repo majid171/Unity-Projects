@@ -215,17 +215,17 @@ PrefabInstance:
     - target: {fileID: 4540487921356232636, guid: af2b88ded3b839d479e362a0497b5f96,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4540487921356232636, guid: af2b88ded3b839d479e362a0497b5f96,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4540487921356232636, guid: af2b88ded3b839d479e362a0497b5f96,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4540487921356232636, guid: af2b88ded3b839d479e362a0497b5f96,
         type: 3}
@@ -235,7 +235,7 @@ PrefabInstance:
     - target: {fileID: 4540487921356232636, guid: af2b88ded3b839d479e362a0497b5f96,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4540487921356232636, guid: af2b88ded3b839d479e362a0497b5f96,
         type: 3}
@@ -260,12 +260,12 @@ PrefabInstance:
     - target: {fileID: 4540487921356232636, guid: af2b88ded3b839d479e362a0497b5f96,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -300
+      value: -400
       objectReference: {fileID: 0}
     - target: {fileID: 4540487921356232636, guid: af2b88ded3b839d479e362a0497b5f96,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 200
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 4540487921356232636, guid: af2b88ded3b839d479e362a0497b5f96,
         type: 3}
@@ -358,7 +358,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1281426048}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -681,8 +681,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1173363211}
-  - {fileID: 440891319}
   - {fileID: 888430361}
+  - {fileID: 440891319}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

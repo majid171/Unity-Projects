@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5566653890253915252}
   - component: {fileID: 4573403783007866462}
   - component: {fileID: 3802562627034372679}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cockpit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 1101704149369769134}
   - component: {fileID: 343759292900537704}
   - component: {fileID: 7710655437266310193}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Enemy_1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -166,6 +166,7 @@ MonoBehaviour:
   showingDamage: 0
   damageDoneTime: 0
   notifiedOfDestruction: 0
+  timer: 0
   projectilePrefab: {fileID: 3559454900790387087, guid: ae25984fbaafba243a6a8144d6080f80,
     type: 3}
   projectileSpeed: 40
@@ -205,7 +206,7 @@ GameObject:
   - component: {fileID: 6988239401327822670}
   - component: {fileID: 857453140290448816}
   - component: {fileID: 4033514744443748108}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Wing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -296,6 +297,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Weapon
       objectReference: {fileID: 0}
+    - target: {fileID: 1214499445140125996, guid: b39a322c20b3ef54aa31fb0910b5efcc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5959607004072721109, guid: b39a322c20b3ef54aa31fb0910b5efcc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -355,6 +361,16 @@ PrefabInstance:
         type: 3}
       propertyPath: _type
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1029499278625157827, guid: b39a322c20b3ef54aa31fb0910b5efcc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536052091392151124, guid: b39a322c20b3ef54aa31fb0910b5efcc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b39a322c20b3ef54aa31fb0910b5efcc, type: 3}
